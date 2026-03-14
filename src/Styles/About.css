@@ -1,0 +1,39 @@
+
+.about-banner-section {
+    background-color: #f4f8fb; 
+}
+
+
+.banner-curve-shape {
+    position: absolute;
+    top: 5%;
+    left: -10%;
+    width: 450px;
+    height: 220px;
+    border: 70px solid #e7f0f7; 
+    border-left: none; 
+    border-radius: 0 250px 250px 0; 
+    z-index: 0;
+}
+
+
+.banner-line-shape {
+    position: absolute;
+    bottom: 15%;
+    left: -5%;
+    width: 400px;
+    height: 70px;
+    background-color: #e7f0f7;
+    border-radius: 0 35px 35px 0;
+    z-index: 0;
+}
+
+
+@media (max-width: 768px) {
+    .banner-curve-shape, .banner-line-shape {
+        opacity: 0.3; 
+    }
+    .about-banner-section h2 {
+        font-size: 2.5rem !important;
+    }
+}

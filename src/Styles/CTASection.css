@@ -1,0 +1,48 @@
+
+.cta-section {
+    background: radial-gradient(circle at 30% 50%, #1f8cf0 0%, #0a64b5 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.cta-main-btn {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    color: #0a64b5 !important;
+}
+
+.cta-main-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    background-color: #f8f9fa;
+}
+
+
+.cta-badge {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.05); 
+    transition: all 0.3s ease;
+}
+
+.cta-badge:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.cta-badge i {
+    font-size: 1.1rem;
+}
+
+
+@media (max-width: 768px) {
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}

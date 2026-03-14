@@ -1,0 +1,100 @@
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+
+.section-badge {
+    background-color: #5d707e;
+    color: #0d80d8;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 10px 25px;
+}
+
+
+.section-title {
+    color: #111a24;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    color: #556270;
+    font-weight: 500;
+}
+
+
+.contact-card {
+    background-color: #ffffff;
+    border: 1px solid #e1ecf6;
+    border-radius: 20px;
+    padding: 40px 20px;
+    transition: all 0.3s ease; 
+}
+
+
+.contact-card:hover {
+    box-shadow: 0 10px 30px rgba(13, 128, 216, 0.08);
+    transform: translateY(-5px);
+}
+
+
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    background-color: #0d80d8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto; 
+}
+
+.icon-circle i {
+    color: #ffffff;
+    font-size: 28px;
+}
+
+
+.contact-card .card-title {
+    font-weight: 800;
+    color: #111a24;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.contact-card .card-text {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #0d80d8;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon i {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.social-icon:hover {
+    background-color: #0a66ad; 
+    transform: scale(1.1);
+}

@@ -1,0 +1,70 @@
+
+.services-section {
+    background-color: #f6f9fc; 
+}
+
+.watermark-bg {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231a6bb0'%3E%3Cpath d='M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793v-1.086l-1.639 1.638-.532 1.987a.5.5 0 1 1-.966-.26l.51-1.902-1.258-1.259a.5.5 0 0 1 .707-.707l1.011 1.011 1.253-1.253L5.05 10.324l-1.987.532a.5.5 0 1 1-.26-.966l1.902-.51-1.259-1.258a.5.5 0 0 1 .707-.707l1.011 1.011 1.253-1.253-1.638-1.639H3.707l-.647.646a.5.5 0 1 1-.708-.707l1.354-1.354A.5.5 0 0 1 4 4h1.293l-.647-.646a.5.5 0 1 1 .708-.707L6.707 4h1.086L9.431 2.361l1.987-.532a.5.5 0 1 1 .26.966l-1.902.51 1.259 1.258a.5.5 0 0 1-.707.707L9.317 4.259 8.064 5.512 9.702 7.15l1.987-.532a.5.5 0 1 1 .26.966l-1.902.51 1.259 1.258a.5.5 0 0 1-.707.707L9.588 8.048 8.335 9.301l1.638 1.639h1.086l.647-.646a.5.5 0 1 1 .708.707L11 12.354A.5.5 0 0 1 10.646 12H9.353l.647.646a.5.5 0 1 1-.708.707L8 12.06v1.44l.646-.647a.5.5 0 1 1 .708.708L8 16z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.04; 
+    transform: rotate(15deg);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border-color: #e2e8f0;
+}
+
+
+.service-icon-box {
+    width: 65px;
+    height: 65px;
+    background-color: var(--primary-color);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+
+.service-card:hover .service-icon-box {
+    background-color: #12528a;
+    transform: scale(1.05);
+}
+
+
+.lh-lg {
+    line-height: 1.8 !important;
+}
+
+
+.services-section h2 {
+  text-decoration: none;
+}
+
+.services-section h2::after {
+  display: none;
+}
+
+.services-section .row.g-4 > .col-lg-4:last-child {
+  margin-left: auto;
+  margin-right: 0;
+}

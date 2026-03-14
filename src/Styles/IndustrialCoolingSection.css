@@ -1,0 +1,171 @@
+
+.industrial-cooling-sec .text-content {
+    padding-right: 2rem;
+}
+
+.top-icon-box {
+    width: 65px;
+    height: 65px;
+    background-color: #0d80d8; 
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.top-icon-box i {
+    color: #ffffff;
+    font-size: 32px;
+}
+
+
+.main-title {
+    font-weight: 800;
+    color: #111a24;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.main-description {
+    color: #556270;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.sub-title {
+    font-weight: 800;
+    color: #111a24;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.features-list li {
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+}
+
+.features-list li i {
+    color: #0d80d8;
+    font-size: 1.2rem;
+    margin-left: 10px; 
+    font-weight: bold;
+}
+
+
+.benefits-box {
+    background-color: #eef6fc; 
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #e1ecf6;
+}
+
+.sub-title-box {
+    font-weight: 800;
+    color: #111a24;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+
+.benefits-list li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: #0d80d8;
+    border-radius: 50%;
+}
+
+
+.image-card-wrapper {
+    position: relative;
+    background-color: #0d80d8;
+    border-radius: 35px;
+    padding: 25px;
+    z-index: 1;
+}
+
+
+.image-card-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 35px;
+    box-shadow: 0 20px 40px rgba(13, 128, 216, 0.15);
+    z-index: -2;
+}
+
+
+.shape-top-right {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(13, 128, 216, 0.2);
+    border-radius: 25px;
+    transform: rotate(15deg);
+    z-index: -1;
+}
+
+
+.shape-bottom-left {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 20px; 
+    position: relative;
+    z-index: 3;
+    display: block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+     
+}
+
+@media (max-width: 991px) {
+    .industrial-cooling-sec .text-content {
+        padding-right: calc(var(--bs-gutter-x) * .5); 
+        margin-top: 2rem;
+    }
+}
