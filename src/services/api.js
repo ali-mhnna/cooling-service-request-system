@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-
-
-const API_BASE_URL = 'https://backend-cooling-production.up.railway.app/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -12,54 +10,7 @@ const api = axios.create({
   },
 });
 
-
-
-
-api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('access_token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-
-api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    if (error.response?.status === 401) {
-      const refreshToken = localStorage.getItem('refresh_token');
-      if (refreshToken) {
-        try {
-          const { data } = await axios.post(
-            `${API_BASE_URL}/admin/refresh`,
-            {},
-            {
-              headers: { 'X-Refresh-Token': refreshToken }
-            }
-          );
-          
-          localStorage.setItem('access_token', data.data.access_token);
-          error.config.headers.Authorization = `Bearer ${data.data.access_token}`;
-          return api.request(error.config);
-          
-        } catch (refreshError) {
-          localStorage.clear();
-          window.location.href = '/login';
-        }
-      }
-    }
-    return Promise.reject(error);
-  }
-);
-
-
-
+// إرسال طلب استشارة (عام)
 export const submitConsultationRequest = async (formData) => {
   try {
     const response = await api.post('/consultation-request', formData);
@@ -77,6 +28,41 @@ export const submitConsultationRequest = async (formData) => {
   }
 };
 
+// ===== Admin Functions =====
+const ADMIN_SECRET = 'safwa-admin-2024-secret'; // نفس الرابط السري
+
+// جلب كل الطلبات (Admin)
+export const getRequests = async () => {
+  try {
+    const response = await api.get(`/${ADMIN_SECRET}/requests`);
+    return {
+      success: true,
+      data: response.data.data,
+      total: response.data.total
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: 'حدث خطأ في جلب الطلبات'
+    };
+  }
+};
+
+// حذف طلب (Admin)
+export const deleteRequest = async (id) => {
+  try {
+    const response = await api.delete(`/${ADMIN_SECRET}/requests/${id}`);
+    return {
+      success: true,
+      message: response.data.message
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: 'حدث خطأ في حذف الطلب'
+    };
+  }
+};
 
 export const contactInfo = {
   phone: '+20 10 07498390',
@@ -91,7 +77,6 @@ export const contactInfo = {
   }
 };
 
-
 export const serviceTypes = [
   { value: '', label: 'اختر نوع الخدمة' },
   { value: 'مخازن التبريد والتجميد', label: 'مخازن التبريد والتجميد' },
@@ -101,6 +86,5 @@ export const serviceTypes = [
   { value: 'استشارة هندسية', label: 'استشارة هندسية' },
   { value: 'أخرى', label: 'أخرى' }
 ];
-
 
 export default api;
